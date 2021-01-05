@@ -4,7 +4,5 @@
   box-sizing: border-box;
 }
 
-.App {
-  color: green;
-  background-color: lightblue;
-}
+@import "./_Song";
+@import "./_Player";
