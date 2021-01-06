@@ -19,7 +19,11 @@ function App() {
         isPLaying={isPLaying}
         setIsPLaying={setIsPLaying}
       />
-      <Library songs={songs} currentSong={currentSong} />
+      <Library
+        songs={songs}
+        currentSong={currentSong}
+        setCurrentSong={setCurrentSong}
+      />
     </div>
   );
 }

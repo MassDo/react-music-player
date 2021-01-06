@@ -1,6 +1,11 @@
-const LibrarySong = ({ song }) => {
+const LibrarySong = ({ id, songs, song, setCurrentSong }) => {
+  // Event Handler
+  const songSelectHandler = () => {
+    setCurrentSong(song);
+  };
+
   return (
-    <div className="library-song">
+    <div onClick={songSelectHandler} className="library-song">
       <img alt={song.name} src={song.cover} />
       <div className="song-description">
         <h3>{song.name}</h3>
