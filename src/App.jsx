@@ -17,10 +17,12 @@ function App() {
   return (
     <div className="App">
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
-      <Song currentSong={currentSong} />
+      <Song isPLaying={isPLaying} currentSong={currentSong} />
       <Player
+        songs={songs}
         audioRef={audioRef}
         currentSong={currentSong}
+        setCurrentSong={setCurrentSong}
         isPLaying={isPLaying}
         setIsPLaying={setIsPLaying}
       />
