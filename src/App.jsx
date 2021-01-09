@@ -17,7 +17,7 @@ function App() {
   // Handler
   const scrollToTopHandler = () => {
     setTimeout(() => {
-      window.scrollTo(0, 1);
+      window.scrollTo(0, 1000);
     }, 0);
   };
 
