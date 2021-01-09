@@ -1,6 +1,8 @@
-const Song = ({ isPLaying, currentSong }) => {
+const Song = ({ libraryStatus, setLibraryStatus, isPLaying, currentSong }) => {
+  const toggleLibraryHandler = () =>
+    libraryStatus ? setLibraryStatus(!libraryStatus) : "";
   return (
-    <div className="song-container">
+    <div onClick={toggleLibraryHandler} className="song-container">
       <img
         className={isPLaying ? "imageOff" : "imageOn"}
         alt={currentSong.name}
