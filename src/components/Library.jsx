@@ -24,7 +24,6 @@ const Library = ({
             setCurrentSong={setCurrentSong}
           />
         ))}
-        ;
       </div>
     </div>
   );

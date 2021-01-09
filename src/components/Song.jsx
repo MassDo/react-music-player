@@ -1,6 +1,4 @@
 const Song = ({ isPLaying, currentSong }) => {
-  console.log(isPLaying);
-
   return (
     <div className="song-container">
       <img

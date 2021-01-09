@@ -5,8 +5,12 @@
 }
 body {
   font-family: "Lato", sans-serif;
-  background: linear-gradient(-45deg, #f8e8cb, #f0a2f0);
-  animation: gradient s ease infinite;
+}
+.App {
+  transition: all 0.5s ease;
+}
+.library-active {
+  margin-left: 30%;
 }
 @keyframes gradient {
   0% {
@@ -28,6 +32,12 @@ h1,
 h2,
 h3 {
   color: rgb(53, 52, 52);
+}
+
+@media screen and (min-width: 768px) {
+  .library-active {
+    margin-left: 20rem;
+  }
 }
 
 @import "./_Song";

@@ -13,9 +13,13 @@ function App() {
   const [isPLaying, setIsPLaying] = useState(false);
   const audioRef = useRef(null);
   const [libraryStatus, setLibraryStatus] = useState(false);
-
   return (
-    <div className="App">
+    <div
+      className={`App ${libraryStatus ? "library-active" : ""}`}
+      style={{
+        background: `linear-gradient(-45deg, ${currentSong.color[0]}, ${currentSong.color[1]})`,
+      }}
+    >
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
       <Song isPLaying={isPLaying} currentSong={currentSong} />
       <Player

@@ -15,12 +15,12 @@ const Player = ({
   setIsPLaying,
   audioRef,
 }) => {
-  // State
+  // State and const
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0,
   });
-
+  const animationPercentage = (songInfo.currentTime / songInfo.duration) * 100;
   // Event Handler
   const playSongHandler = () => {
     // toogle the play/pause button
@@ -38,7 +38,7 @@ const Player = ({
     // Format time from sec to min : sec
     let minutes = Math.floor(time / 60);
     let seconds = ("0" + ~~(time % 60)).slice(-2); // ~~ for Math.floor
-    return minutes + " : " + seconds;
+    return minutes + ":" + seconds;
   };
   const dragHandler = (e) => {
     audioRef.current.currentTime = e.target.value;
@@ -72,13 +72,22 @@ const Player = ({
     <div className="player">
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
-        <input
-          onChange={dragHandler}
-          min={0}
-          max={songInfo.duration || 0}
-          value={songInfo.currentTime}
-          type="range"
-        />
+        <div className="track">
+          <input
+            onChange={dragHandler}
+            min={0}
+            max={songInfo.duration || 0}
+            value={songInfo.currentTime}
+            type="range"
+          />
+          <div
+            className="animate-track"
+            style={{
+              background: `linear-gradient(to right, ${currentSong.color[0]}, #c5bebc)`,
+              transform: `translateX(${animationPercentage}%)`,
+            }}
+          ></div>
+        </div>
         <p>{getTime(songInfo.duration || 0)}</p>
       </div>
       <div className="play-control">
@@ -106,6 +115,7 @@ const Player = ({
         onLoadedMetadata={timeUpdateHandler}
         ref={audioRef}
         src={currentSong.audio}
+        onEnded={skipForward}
       ></audio>
     </div>
   );
