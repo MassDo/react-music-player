@@ -5,7 +5,11 @@
 }
 body {
   font-family: "Lato", sans-serif;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: -wekit-fill-available;
+}
+html {
+  height: -webkit-fill-available;
 }
 .App {
   transition: all 0.5s ease;
