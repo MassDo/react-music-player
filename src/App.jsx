@@ -13,8 +13,17 @@ function App() {
   const [isPLaying, setIsPLaying] = useState(false);
   const audioRef = useRef(null);
   const [libraryStatus, setLibraryStatus] = useState(false);
+
+  // Handler
+  const scrollToTopHandler = () => {
+    setTimeout(() => {
+      window.scrollTo(0, 1);
+    }, 0);
+  };
+
   return (
     <div
+      onLoad={scrollToTopHandler}
       className={`App ${libraryStatus ? "library-active" : ""}`}
       style={{
         background: `linear-gradient(-45deg, ${currentSong.color[0]}, ${currentSong.color[1]})`,
