@@ -1,9 +1,13 @@
 const Song = ({ libraryStatus, setLibraryStatus, isPLaying, currentSong }) => {
-  const toggleLibraryHandler = () =>
+  // Event Handler
+  const openedLibraryHandler = () =>
     libraryStatus ? setLibraryStatus(!libraryStatus) : "";
+
+  // UI
   return (
-    <div onClick={toggleLibraryHandler} className="song-container">
+    <div onClick={openedLibraryHandler} className="song-container">
       <img
+        onClick={() => setLibraryStatus(!libraryStatus)}
         className={isPLaying ? "imageOff" : "imageOn"}
         alt={currentSong.name}
         src={currentSong.cover}

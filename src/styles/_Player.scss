@@ -57,14 +57,15 @@ input[type="range"]:focus {
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 1px;
-  width: 1px;
+  height: 15px;
+  width: 15px;
 }
 input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
   background-color: transparent;
   border: transparent;
-  height: 1px;
-  width: 1px;
+  height: 15px;
+  width: 15px;
 }
 
 @media screen and (max-width: 768px) {
